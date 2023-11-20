@@ -1,0 +1,8 @@
+
+11월 20, 2023 20:10:09.761 NEW SESSION
+11월 20, 2023 20:10:09.761 [8596:16164:1120/201009.756:ERROR:sharing_service.cc(250)] Device un-registration failed with fatal error
+11월 20, 2023 20:59:29.214 [8596:16164:1120/205929.214:ERROR:device_event_log_impl.cc(192)] [20:59:29.217] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 20, 2023 21:07:41.833 [8596:16164:1120/210741.832:ERROR:device_event_log_impl.cc(192)] [21:07:41.832] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 20, 2023 21:07:41.843 [8596:16164:1120/210741.842:ERROR:device_event_log_impl.cc(192)] [21:07:41.842] USB: usb_service_win.cc:307 SetupDiEnumDeviceInterfaces: 사용 가능한 데이터가 없습니다. (0x103)
+11월 20, 2023 21:08:01.243 [8596:16164:1120/210801.242:ERROR:device_event_log_impl.cc(192)] [21:08:01.242] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 20, 2023 21:08:01.256 [8596:16164:1120/210801.255:ERROR:device_event_log_impl.cc(192)] [21:08:01.254] USB: usb_service_win.cc:307 SetupDiEnumDeviceInterfaces: 사용 가능한 데이터가 없습니다. (0x103)

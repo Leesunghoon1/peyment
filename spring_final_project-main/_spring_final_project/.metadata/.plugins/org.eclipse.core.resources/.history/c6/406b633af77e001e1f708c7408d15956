@@ -1,0 +1,5 @@
+package com.easyfestival.www;
+
+public class SecurityConfig {
+
+}

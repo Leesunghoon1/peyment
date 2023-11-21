@@ -1,0 +1,13 @@
+package com.easyfestival.www.service;
+
+import org.springframework.beans.factory.annotation.Value;
+
+public class payService {
+	
+	
+	@Value("7820725586500628")
+	private String apiKey;
+
+	@Value("8kJzA2A8JvcuCEVuWlXENjqli35CyLVev2gY4grQLmxfnj2DZvvqPZu4sDlrLLjjdmDpKaUiEkDEyCJM")
+	private String secretKey;
+}

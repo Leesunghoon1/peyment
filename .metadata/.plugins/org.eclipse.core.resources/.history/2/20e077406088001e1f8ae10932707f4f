@@ -1,0 +1,12 @@
+package com.easyfestival.www.service;
+
+import com.easyfestival.www.repository.OrderDTO;
+
+public class orderService {
+
+	public static void insert_pay(OrderDTO orderDTO) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

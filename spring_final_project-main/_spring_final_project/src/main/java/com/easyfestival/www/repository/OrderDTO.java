@@ -23,7 +23,7 @@ public class OrderDTO {
 	private Date orderDate;
 	private Long totalPrice;
 	private String imp_uid;
-	private Long reserNum;
+	private Long resurNum;
 	
 	
 	

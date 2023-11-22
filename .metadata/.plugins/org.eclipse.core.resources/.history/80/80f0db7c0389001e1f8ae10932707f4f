@@ -1,0 +1,5 @@
+package com.easyfestival.www.repository;
+
+public class PackageDTO {
+
+}

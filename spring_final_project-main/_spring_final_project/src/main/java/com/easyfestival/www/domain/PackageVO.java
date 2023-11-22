@@ -16,6 +16,4 @@ public class PackageVO {
 	private int pkNo;
 	private String pkName;
 	private int pkPrice;
-	
-
 }

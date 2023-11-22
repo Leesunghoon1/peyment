@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.easyfestival.www.repository.OrderDAO">
+ 	
+ 	<!-- 주문 정보 생성 -->
+ 	<insert id ="insert_pay" parameterType="com.easyfestival.www.repository.OrderDTO">
+ 		insert into pay_order_user(order_num, product_num, num, product_name, order_date, total_price, imp_uid, resur_num)
+ 		values(#{orderNum},#{productNum}, #{num},#{productName},#{orderDate},#{totalPrice}, #{imp_uid},#{resurNum})
+	</insert>
+	
+	
+	    <insert id ="insert_payinfo" parameterType="com.easyfestival.www.repository.PayDTO">
+    	insert into sc_pay(num, order_num, pay_method, pay_name, pay_date, pay_amount)	
+    	values(#{num},#{orderNum},#{payMethod},#{payName},#{payDate},#{payAmount})   
+    </insert>
+    
+      <!-- 마지막에 결제된 방금 결제된 주문정보 가져오기 -->
+    <select id="getLastPay" parameterType="com.easyfestival.www.repository.PayDTO" resultType="com.easyfestival.www.repository.PayDTO">
+	    SELECT * FROM sc_pay WHERE pay_num = (SELECT MAX(pay_num) FROM sc_pay)
+    </select>
+    
+     <!--  결제 정보 가져오기 -->
+    <select id="getPay" resultType="com.easyfestival.www.repository.PayDTO">
+        SELECT * FROM 
+		sc_pay WHERE pay_num = pay_num
+    </select>
+	
+	</mapper>

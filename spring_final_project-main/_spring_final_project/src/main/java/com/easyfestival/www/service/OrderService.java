@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.easyfestival.www.repository.OrderDAO;
 import com.easyfestival.www.repository.OrderDTO;
+import com.easyfestival.www.repository.PayDTO;
 
 @Service
 public class OrderService {
@@ -17,5 +18,21 @@ public class OrderService {
 		
 		return orderDAO.insert_pay(orderDTO);
 	}
+
+	public int insert_payinfo(PayDTO payDTO) throws Exception{
+		
+		return orderDAO.insert_payinfo(payDTO);
+	}
+
+	public PayDTO getLastPay(PayDTO payDTO) throws Exception{
+		
+		return orderDAO.getLastPay(payDTO);
+	}
+
+	public PayDTO getPay(long payNum) {
+		// TODO Auto-generated method stub
+		return orderDAO.getPay(payNum);
+	}
+
 
 }

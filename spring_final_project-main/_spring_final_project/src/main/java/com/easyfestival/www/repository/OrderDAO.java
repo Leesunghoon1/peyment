@@ -2,6 +2,12 @@ package com.easyfestival.www.repository;
 public interface OrderDAO {
 
 	int insert_pay(OrderDTO orderDTO);
+
+	int insert_payinfo(PayDTO payDTO);
+
+	PayDTO getLastPay(PayDTO payDTO);
+
+	PayDTO getPay(long payNum);
 	
 
 

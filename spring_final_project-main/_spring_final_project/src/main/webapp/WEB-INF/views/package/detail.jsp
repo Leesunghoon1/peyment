@@ -4,13 +4,21 @@
 <!DOCTYPE html>
 
 <html>
+
+<head>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <!-- iamport.payment.js -->
 <script type="text/javascript"
 	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-<head>
+<!-- SweetAlert2 CSS -->
+
 <title>Home</title>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- SweetAlert2 JS -->
+<script
+	src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 </head>
 <link rel="stylesheet" href="/resources/css/user-number.css">
 

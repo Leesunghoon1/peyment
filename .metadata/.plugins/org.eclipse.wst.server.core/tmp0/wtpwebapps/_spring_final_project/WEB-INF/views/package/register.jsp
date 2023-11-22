@@ -22,6 +22,25 @@
 		<div>
 			<span>가격</span> <input type="text" name="pkPrice">
 		</div>
+			<div>
+			<span>패키지 이름</span> <input type="text" class="form-control"
+				name="pkName" aria-label="Username" aria-describedby="basic-addon1">
+		</div>
+
+		<div>
+			<span>가격</span> <input type="text" name="pkPrice">
+		</div>
+			<div>
+			<span>패키지 이름</span> <input type="text" class="form-control"
+				name="pkName" aria-label="Username" aria-describedby="basic-addon1">
+		</div>
+
+		<div>
+			<span>가격</span> <input type="text" name="pkPrice">
+		</div>
+		
+		
+		
 		<button type="submit" id="button">등록</button>
 	</form>
 

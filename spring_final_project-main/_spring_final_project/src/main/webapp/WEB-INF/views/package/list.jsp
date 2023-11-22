@@ -17,13 +17,14 @@
 			<th>상품명</th>
 			<th>상품가격</th>
 		</tr>
-		<c:forEach items="${list}" var="pvo">
-			<tr data-bno="${pvo.pkNo}">
+		<c:forEach items="${list}" var="order">
+			<tr data-bno="${order.pkNo}">
 				<td>
-				<a id="${pvo.pkNo}" href="/package/detail?pkNo=${pvo.pkNo}">${pvo.pkNo}</a>
+				<a id="${order.pkNo}" href="/package/detail?pkNo=${order.pkNo}">${order.pkNo}</a>
 				</td>
-				<td>${pvo.pkName}</td>
-				<td>${pvo.pkPrice}</td>
+				<td>${order.pkName}</td>
+				<td>${order.pkPrice}</td>
+				
 			</tr>
 		</c:forEach>
 	</table>

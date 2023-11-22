@@ -507,3 +507,14 @@
 0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:27:00 +0900] "GET /resources/js/userPayment.js HTTP/1.1" 200 4974
 0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:27:24 +0900] "POST /peyment/peverifyIamport/imp_848622204288 HTTP/1.1" 200 1069
 0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:27:24 +0900] "POST /peyment/complete HTTP/1.1" 500 7532
+127.0.0.1 - - [21/Nov/2023:21:29:30 +0900] "GET / HTTP/1.1" 200 180
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:29:30 +0900] "GET / HTTP/1.1" 200 180
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:29:32 +0900] "GET /package/register HTTP/1.1" 200 504
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:29:34 +0900] "POST /package/register HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:29:34 +0900] "GET /package/list HTTP/1.1" 200 9367
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:29:35 +0900] "GET /package/detail?pkNo=21 HTTP/1.1" 200 3309
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:29:35 +0900] "GET /resources/js/userPayment.js HTTP/1.1" 200 4974
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:29:35 +0900] "GET /resources/css/user-number.css HTTP/1.1" 200 3917
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:29:39 +0900] "GET /resources/css/user-number.css HTTP/1.1" 200 3917
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:30:01 +0900] "POST /peyment/peverifyIamport/imp_966781852720 HTTP/1.1" 200 1067
+0:0:0:0:0:0:0:1 - - [21/Nov/2023:21:30:02 +0900] "POST /peyment/complete HTTP/1.1" 500 7532

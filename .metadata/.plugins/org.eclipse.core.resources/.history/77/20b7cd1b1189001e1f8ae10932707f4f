@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>iamport</title>
+<!-- jQuery -->
+
+		
+
+</head>
+<body>
+	<a class="nav-link" href="/package/register">Board Register</a>
+	
+		<c:forEach items="${list}" var="order">
+			<tr data-bno="${order.pkNo}">
+				<td>
+				<a id="${order.pkNo}" href="/package/detail?pkNo=${order.pkNo}">${order.pkNo}</a>
+				</td>
+				<td>${order.pkName}</td>
+				<td>${order.pkPrice}</td>
+				
+			</tr>
+		</c:forEach>
+	
+
+
+	
+	
+	
+</body>
+</html>

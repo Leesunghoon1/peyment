@@ -1,9 +1,0 @@
-package com.easyfestival.www.repository;
-
-import com.easyfestival.www.security.UserVO;
-
-public interface UserDAO {
-
-	UserVO selectId(String username);
-
-}

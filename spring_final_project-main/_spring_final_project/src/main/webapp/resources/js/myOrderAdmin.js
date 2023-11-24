@@ -1,0 +1,1 @@
+const orderNum = document.querySelectorAll(".orderNum");

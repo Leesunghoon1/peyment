@@ -15,3 +15,12 @@
 1700566018725	Delete element
 1700566487119	Delete element
 1700637226728	Delete element
+1700726910305	Rename package 'com.easyfestival.www.PaigingHendler'
+1700726934763	Rename package 'com.easyfestival.www.Hendler'
+1700727014293	Rename compilation unit 'PaigingHendler.java'
+1700820849647	Rename type 'PackageDAO'
+1700820866484	Rename type 'PackageService'
+1700820873761	Rename type 'PackageServiceImpl'
+1700820883814	Rename resource 'packageMapper.xml'
+1700821521549	Rename type 'PackageController'
+1700822054793	Rename type 'PackageVO'

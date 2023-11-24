@@ -1,7 +1,10 @@
 package com.easyfestival.www.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -112,7 +115,6 @@ public class PeymentController {
 		IamportResponse<Payment> result = api.paymentByImpUid(imp_uid);
 		PayDTO payDTO = new PayDTO();
 		
-		System.out.println("포인트야 ?"+ result.getResponse().getPayMethod());
 		
 		System.out.println((Long) session.getAttribute("saveNum"));
 		payDTO.setNum((Long) session.getAttribute("saveNum"));
@@ -128,6 +130,38 @@ public class PeymentController {
 
 		return new ResponseEntity<Long>(payDTO.getPayNum(), HttpStatus.OK);
 	}
+	
+	/*
+	 * @GetMapping(value = "myOrderList") public String myOrder(OrderDTO
+	 * orderDTO,HttpSession session, Model model,
+	 * 
+	 * @RequestParam(value = "pagingNum", required = false, defaultValue = "1")
+	 * String pagingNum) throws Exception{
+	 * 
+	 * System.out.println("myorderList"); Long svNum =
+	 * (Long)(session.getAttribute("saveNum"));
+	 * 
+	 * String saveNUM = String.valueOf(svNum); List<Long> codeList =
+	 * orderService.MyOrderCount(saveNUM);
+	 * 
+	 * System.out.println("saveNum : " + saveNUM); System.out.println("codeList : "
+	 * +codeList); PagingVO pgvo = new PagingVO();
+	 * pgvo.setPage(Integer.parseInt(pagingNum)); pgvo.setPerPageNum(3);
+	 * 
+	 * 
+	 * List<Long> limitList = new ArrayList<Long>(); try { limitList =
+	 * codeList.subList(pgvo.getPageStart(), pgvo.getPageStart()+3); } catch
+	 * (Exception e) { limitList = codeList.subList(pgvo.getPageStart(),
+	 * codeList.size()); } Map<Long, List> orderMap =
+	 * orderService.getMyOrderList(saveNUM, limitList);
+	 * 
+	 * PagingHandler ph = new PagingHandler(); ph
+	 * 
+	 * ph.set(codeList.size());
+	 * 
+	 * model.addAttribute("orderMap", orderMap); model.addAttribute("pagingNum",
+	 * pagingNum); model.addAttribute("pm", pm); return "order/myOrderList"; }
+	 */
 	
 
 

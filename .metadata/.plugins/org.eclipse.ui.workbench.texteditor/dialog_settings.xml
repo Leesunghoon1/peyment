@@ -8,6 +8,10 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="imp &gt;&gt;&gt;"/>
+			<item value="orderDTO &gt;&gt;&gt;&gt;"/>
+			<item value="rsp.imp_uid"/>
+			<item value="orderDTO"/>
 			<item value="들어옴 ?"/>
 		</list>
 		<list key="replacehistory">

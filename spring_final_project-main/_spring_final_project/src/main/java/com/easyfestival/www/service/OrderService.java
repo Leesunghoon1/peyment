@@ -1,5 +1,7 @@
 package com.easyfestival.www.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,11 @@ public class OrderService {
 	public PayDTO getPay(long payNum) {
 		// TODO Auto-generated method stub
 		return orderDAO.getPay(payNum);
+	}
+
+	public List<Long> MyOrderCount(String saveNUM) {
+		// TODO Auto-generated method stub
+		return orderDAO.myOrderCount(saveNUM);
 	}
 
 

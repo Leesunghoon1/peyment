@@ -32,8 +32,10 @@
 <link rel="stylesheet" href="/resources/css/user-number.css?var=2">
 
 <body>
+
 	<div class="payment-container-main">
 
+		<!-- 예약자 정보 -->
 
 		<div class="payment-box-left">
 			<!-- 왼쪽 div  -->
@@ -41,91 +43,95 @@
 
 
 
-			<!-- 예약자 정보 -->
-			<div class="info">
+			<div>
 				<div class="user-number">
 
-				<div class="user-number-box">
-					<h3 id="user-nmuber-top">이성훈님의 회원정보</h3>
-				</div>
-				<div class="form-group"></div>
+					<div class="user-number-box">
+						<h3 id="user-nmuber-top">이성훈님의 회원정보</h3>
+					</div>
+					<div class="form-group"></div>
 
-				<div class="form-group-two">
-					<span for="phon">전화번호</span><br><br>
-					<strong>010-7441-5488</strong><br> <br> <span>*개인
-						정보 보호를 위해 안심번호로 landmark에 전송됩니다.</span> <br> <br>
-					<span for="adrass">주소</span><br>
-					<strong>신정네거리</strong><br><br>
-					<span for="email">이메일</span><br>
-					<strong>fecd119@naver.com</strong><br> <br>
-						<span for="phon">맴버쉽</span><br>
-					<strong>gold</strong><br> <br><br>
-				</div>
-
-
-			</div>
-
-			<!--할인 쿠폰  -->
-
-			<div class="event-box">
-				<div class="user-event-box">
-					<h3 class="user-nmuber-top">할인 수단 선택</h3>
-				</div>
-				<div class="product-amout">
-					<span>구매 총액</span> <b>${pkvo.pkPrice}</b>
-				</div>
-
-				<div class="form-group-cupon-mid">
-					<button type="button" class="cupon-button">사용 가능 쿠폰</button>
+					<div class="form-group-two">
+						<span for="phon">전화번호</span><br> <br> <strong>010-7441-5488</strong><br>
+						<br> <span>*개인 정보 보호를 위해 안심번호로 landmark에 전송됩니다.</span> <br>
+						<br> <span for="adrass">주소</span><br> <strong>신정네거리</strong><br>
+						<br> <span for="email">이메일</span><br> <strong>fecd119@naver.com</strong><br>
+						<br> <span for="phon">맴버쉽</span><br> <strong>gold</strong><br>
+						<br> <br>
+					</div>
 
 
 				</div>
-				<div class="product-amout">
-					<span> 일반쿠폰 </span> <span> - </span>
-				</div>
 
-				<div class="product-amout">
-					<span> 추가쿠폰 </span> <span> - </span>
-				</div>
+				<!--할인 쿠폰  -->
 
-			</div>
-			</div>
-		
+				<div class="event-box">
+					<div class="user-event-box">
+						<h3 class="user-nmuber-top">할인 수단 선택</h3>
+					</div>
+					<div class="product-amout">
+						<span>구매 총액</span> <b>${pkvo.pkPrice}</b>
+					</div>
 
-			<div class="cash-box">
-				<section class="user-event-box">
-					<h3 class="user-nmuber-top">결제수단 선택</h3>
-					<c:set value="${ph.pgvo.type}" var="typed" />
-					<select id="paymentMethod">
-						<option data-minprice="0" selected="selected" value="kakaopay"
-							data-v-16d1a795>카카오페이</option>
-						<option data-minprice="0" value="tosspay"}>토스</option>
-						<option data-minprice="0" value="html5_inicis"}>KG이니시스</option>
-						<option data-minprice="0" value="payco">페이코</option>
-						<option data-minprice="0" value="daou"}>키움페이</option>
-						<option data-minprice="0" value="settle"}>핵토파이낸셜</option>
-					</select>
-				</section>
-				<button class="custom-btn btn-6" type="button"
-					onclick="requestPay()">
-					<span>결제하기</span>
-				</button>
+					<div class="form-group-cupon-mid">
+						<button type="button" class="cupon-button">사용 가능 쿠폰</button>
 
-				<button onclick="cancelPay()">환불하기</button>
-				<!-- jQuery CDN --->
-				
-				
-				<div class="form-group-bottom"></div>
-				<!--  로그인 하면 안보이게 만들어주기~ -->
-			
-					<div class="form-group-rogin">
-					<a> "로그인 후 예약하시면" <br> "할인 쿠폰과 추가 이벤트 를 사용하실수 있습니다~!" <br>
-						<span>로그인 ></span>
-					</a>
+
+					</div>
+					<div class="product-amout">
+						<span> 일반쿠폰 </span> <span> - </span>
+					</div>
+
+					<div class="product-amout">
+						<span> 추가쿠폰 </span> <span> - </span>
+					</div>
+					<div class="product-amout">
+						<span> 맴버쉽 할인</span> <span> - </span>
+					</div>
+					<div class="product-amout">
+						<span> 최종할인</span> <span> - </span>
+					</div>
+					<div class="product-amout">
+						<span> 최종금액</span> <span> <b>${pkvo.pkPrice}</b> -
+						</span>
+					</div>
+
+
+
 				</div>
 			</div>
 
 
+			<div class="box">
+				<div class="selectBox2">
+					<button class="label">결제수단 선택</button>
+					<ul class="optionList" id="paymentMethod">
+						<li class="optionItem" value="kakaopay" data-v-16d1a795>카카오페이</li>
+						<li class="optionItem" value="tosspay">토스</li>
+						<li class="optionItem" value="html5_inicis">KG이니시스</li>
+						<li class="optionItem" value="payco">페이코</li>
+						<li class="optionItem" value="settle">핵토파이낸셜</li>
+						<li class="optionItem" value="daou">키움페이</li>
+					</ul>
+				</div>
+			</div>
+
+			<button class="custom-btn btn-6" type="button" onclick="requestPay()">
+				<span>결제하기</span>
+			</button>
+
+			<button onclick="cancelPay()">환불하기</button>
+			<!-- jQuery CDN --->
+
+
+			<div class="form-group-bottom"></div>
+			<!--  로그인 하면 안보이게 만들어주기~ -->
+
+			<div class="form-group-rogin">
+				<a> "로그인 후 예약하시면" <br> "할인 쿠폰과 추가 이벤트 를 사용하실수 있습니다~!" <br>
+					<span>로그인 ></span>
+				</a>
+			</div>
 		</div>
 		<div class="payment-box-right">
 
@@ -228,10 +234,12 @@
 						</div>
 
 					</div>
-
-
-
 				</div>
+			</div>
+		</div>
+
+	</div>
+
 </body>
 <script type="text/javascript">
 	let pkVo = `<c:out value="${pkvo}" />`;

@@ -3,7 +3,6 @@ INDEX VERSION 1.4+C:\lee\pjt\spring_final_project-main\.metadata\.plugins\org.ec
 1390392475.index
 2162600566.index
 811291083.index
-2162600566.index
 162493719.index
 4111418609.index
 1855103963.index

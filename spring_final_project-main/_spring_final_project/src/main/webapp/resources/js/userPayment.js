@@ -3,7 +3,7 @@ console.log(pkVo);
 // 정규식을 사용하여 패턴에 맞게 문자열 파싱
 const matches = pkVo.match(/pkNo=(\d+), pkName=([^,]+), pkPrice=(\d+)/);
 
-
+var selectedValue;
 // matches 배열에서 필요한 정보 추출
 const pkNo = matches[1];
 const pkName = matches[2];
@@ -13,11 +13,22 @@ const pkPrice = matches[3];
 
 
 
+ document.addEventListener("DOMContentLoaded", function() {
+    var optionList = document.getElementById("paymentMethod");
+    
+    optionList.addEventListener("click", function(event) {
+      selectedValue = event.target.getAttribute("value");
+      console.log("Selected Value:", selectedValue);
+
+    });
+  });
+
+
+
   function requestPay() {
     // IMP.request_pay(param, callback) 결제창 호출
     var uid = '';
     IMP.init("imp76450478");
-  var selectedValue = document.getElementById("paymentMethod").value;
 
     IMP.request_pay({ // param
         pg: selectedValue,
@@ -135,3 +146,56 @@ window.location.replace('/peyment/complete?payNum=' + data);
         }
     });
 }
+
+
+
+
+
+
+
+
+
+// 셀렉트 옵션
+
+/* 화살표 함수 */
+/* const label = document.querySelector('.label');
+const options = document.querySelectorAll('.optionItem');
+const handleSelect = (item) => {
+  label.parentNode.classList.remove('active');
+  label.innerHTML = item.textContent;
+}
+
+options.forEach(option => {
+  option.addEventListener('click', () => handleSelect(option))
+})
+
+label.addEventListener('click', () => {
+  if(label.parentNode.classList.contains('active')) {
+    label.parentNode.classList.remove('active');
+  } else {
+    label.parentNode.classList.add('active');
+  }
+}) */
+
+
+
+
+const label = document.querySelector('.label');
+const options = document.querySelectorAll('.optionItem');
+const handleSelect = function(item) {
+  label.innerHTML = item.textContent;
+  label.parentNode.classList.remove('active');
+}
+options.forEach(function(option){
+  option.addEventListener('click', function(){handleSelect(option)})
+})
+
+label.addEventListener('click', function(){
+  if(label.parentNode.classList.contains('active')) {
+    label.parentNode.classList.remove('active');
+  } else {
+    label.parentNode.classList.add('active');
+  }
+});
+
+

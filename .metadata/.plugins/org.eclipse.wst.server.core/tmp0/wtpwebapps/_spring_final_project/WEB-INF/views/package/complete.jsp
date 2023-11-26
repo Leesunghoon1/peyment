@@ -28,7 +28,7 @@ body, h1, h2, h3, h4, h5, h6, p, span {
 				<div class="row">
 					<div class="col-lg-12">
 
-						<h3>${payDTO.orderNum }님의전체 주문 내역</h3>
+						<h3>${payDTO.orderNum }님의전체주문 내역</h3>
 
 						<div class="point_list_box">
 
@@ -79,8 +79,7 @@ body, h1, h2, h3, h4, h5, h6, p, span {
 															</div></td>
 														<td>
 															<button type="button" order-num="${val.orderNum}"
-																class="payMentCancel site-btn">주문취소</button>
-															<br>
+																class="payMentCancel site-btn">주문취소</button> <br>
 														</td>
 
 													</c:forEach>
@@ -121,6 +120,8 @@ body, h1, h2, h3, h4, h5, h6, p, span {
 
 						</div>
 
+						<button onclick="cancelPay()">환불하기</button>
+						<!-- jQuery CDN --->
 
 
 					</div>

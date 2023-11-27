@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=".box"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="completeDetail"/>
+			<item value="payMentCancle"/>
+			<item value="insert_payinfo"/>
+			<item value="orderMap"/>
+			<item value="point_table"/>
+			<item value="container"/>
+			<item value="checkout-section"/>
+			<item value="point_list_box"/>
+			<item value="bg-video__content"/>
+			<item value="payment-container-main"/>
+			<item value="payment-box-left"/>
 			<item value="div {"/>
 			<item value=".box"/>
 			<item value="form-group-two"/>
 			<item value="float"/>
-			<item value="product-eventTap"/>
-			<item value="price-box"/>
-			<item value="product-table"/>
-			<item value="user-nmuber-top"/>
-			<item value="event-box"/>
-			<item value="user-number"/>
-			<item value="payment-box-right-main"/>
-			<item value=".user-number"/>
-			<item value="box"/>
-			<item value="info"/>
-			<item value="ibfi"/>
 		</list>
 		<list key="replacehistory">
 		</list>

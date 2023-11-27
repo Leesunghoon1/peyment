@@ -1,7 +1,10 @@
 package com.easyfestival.www.service;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +17,9 @@ public class OrderService {
 	
 	@Autowired
 	private OrderDAO orderDAO;
+	
+	@Autowired
+	private PayService payService;
 
 	public int insert_pay(OrderDTO orderDTO) throws Exception{
 		
@@ -40,6 +46,8 @@ public class OrderService {
 		// TODO Auto-generated method stub
 		return orderDAO.myOrderCount(saveNUM);
 	}
+
+
 
 
 }

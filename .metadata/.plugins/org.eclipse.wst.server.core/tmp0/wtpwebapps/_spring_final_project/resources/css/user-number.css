@@ -7,13 +7,10 @@ div {
 
 body {
 	font-family: Arial, sans-serif;
-	background-color: #f4f4f4;
 	margin: 0;
 	padding: 0;
 	font-family: Pretendard, "Pretendard_Alt", "Apple SD Gothic Neo",
 		"맑은 고딕", "Malgun Gothic", sans-serif !important;
-	display: flex;
-		justify-content: space-between;
 }
 
 @media screen and (max-width: 767px) {
@@ -41,9 +38,10 @@ body {
 }
 
 .payment-container-main {
-	background-color: #f4f4f4;
-
+	display: flex;
+	justify-content: space-between;
 	width: 100%;
+	z-index: -2;
 }
 
 .payment-box-left {
@@ -57,6 +55,8 @@ body {
 	margin-left: 40px;
 	text-align: center;
 	background-color: #fff; /* 배경색 추가 */
+	z-index: 1;
+	opacity: 0.9;
 }
 
 .payment-box-right {
@@ -69,6 +69,8 @@ body {
 	margin-bottom: 20px; /* 수정: 아래 여백 추가 */
 	text-align: center;
 	background-color: #fff;
+	z-index: 1;
+	opacity: 0.9;
 }
 
 .product-table {
@@ -368,4 +370,20 @@ form-group-rogin span {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
+}
+
+.bg-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.bg-video__content {
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	background-size: cover 와 비슷함.(HTML 요소 or 비디오와 작동)
 }

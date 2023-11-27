@@ -1,6 +1,7 @@
 package com.easyfestival.www.repository;
 
 import java.util.List;
+import java.util.Map;
 
 public interface OrderDAO {
 
@@ -13,8 +14,6 @@ public interface OrderDAO {
 	PayDTO getPay(long payNum);
 
 	List<Long> myOrderCount(String saveNUM);
-	
-
 
 
 }

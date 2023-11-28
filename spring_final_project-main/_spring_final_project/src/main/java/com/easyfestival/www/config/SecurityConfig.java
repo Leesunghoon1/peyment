@@ -58,8 +58,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable();
 		// http 승인 요청
 		http.authorizeRequests().antMatchers("/user/list").hasRole("ADMIN") // 관리자 권한
-		.antMatchers("/","/resources/**", "/user/login", "/package/register", "/package/list", "/package/detail").permitAll(); // 모든 이용자 권한
-//		.anyRequest().authenticated(); // => 인증된 사용자만 처리
+		.antMatchers("/","/resources/**","/user/join" ,"/user/login","/user/checkId/*","/package/**","/product/**","/product_upload/**","/review/**").permitAll() // 모든 이용자 권한
+		.anyRequest().authenticated(); // => 인증된 사용자만 처리
 		
 		// 커스텀 로그인 페이지 구성
 		// controller에 주소요청 맵핑도 같이 꼭 적어줘야 함

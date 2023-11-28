@@ -46,13 +46,13 @@
 						<h3 id="user-nmuber-top">이성훈님의 회원정보</h3>
 					</div>
 					<div class="form-group"></div>
-
 					<div class="form-group-two">
-						<span for="phon">전화번호</span><br> <strong>010-7441-5488</strong>
-						<br> <span>*개인 정보 보호를 위해 안심번호로 landmark에 전송됩니다.</span> <br>
-						<br> <span for="adrass">주소</span><br> <strong>신정네거리</strong><br>
-						<br> <span for="email">이메일</span><br> <strong>fecd119@naver.com</strong><br>
-						<br> <span for="phon">맴버쉽</span><br> <strong>gold</strong><br>
+						<span for="phon">아이디</span><br> <strong>${uvo.id}</strong> <br><br>
+						<span for="phon">전화번호</span><br> <strong>${uvo.phoneNumber}</strong><br>
+						<br> <span>*개인 정보 보호를 위해 개인정보는 안심번호로 landmark에 전송됩니다.</span> <br>
+						<br> <span for="adrass">주소</span><br> <strong>${uvo.address}</strong><br>
+						<br> <span for="email">이메일</span><br> <strong>${uvo.email}</strong><br>
+						<br> <span for="phon">맴버쉽</span><br> <strong>${uvo.grade}</strong><br>
 						<br> <br>
 					</div>
 
@@ -71,8 +71,7 @@
 
 					<div class="form-group-cupon-mid">
 						<input type="text" id="coupon-input"
-							placeholder="Enter Coupon Code">
-							<br>
+							placeholder="Enter Coupon Code"> <br>
 						<button type="button" class="cupon-button" onclick="applyCoupon()">사용
 							가능 쿠폰</button>
 
@@ -157,7 +156,8 @@
 
 
 
-							<td><span class="apprice"> <span id="discounted-price-value2">${pkvo.pkPrice}</span>
+							<td><span class="apprice"> <span
+									id="discounted-price-value2">${pkvo.pkPrice}</span>
 							</span> 원 ${avo.apDeparture }<br></td>
 
 
@@ -239,6 +239,9 @@
 </body>
 <script type="text/javascript">
 	let pkVo = `<c:out value="${pkvo}" />`;
+</script>
+<script type="text/javascript">
+	let uvo = `<c:out value="${uvo}" />`;
 </script>
 <script type="text/javascript" src="/resources/js/userPayment.js"></script>
 </html>

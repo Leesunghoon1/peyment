@@ -11,4 +11,9 @@ public interface UserDAO {
 
 	List<AuthVO> selectAuths(String username);
 
+	int join(UserVO uvo);
+
+	int authUser(String id);
+
+
 }

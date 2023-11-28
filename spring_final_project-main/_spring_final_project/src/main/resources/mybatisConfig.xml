@@ -11,7 +11,7 @@
 	
    	<typeAliases>
    		<typeAlias type="com.easyfestival.www.security.AuthVO" alias="authvo"/>
-   		<typeAlias type="com.easyfestival.www.security.UserVO" alias="uvo"/>
+   		<typeAlias type="com.easyfestival.www.security.UserVO" alias="uvo"/>  		
   	</typeAliases>
   	 
 </configuration>

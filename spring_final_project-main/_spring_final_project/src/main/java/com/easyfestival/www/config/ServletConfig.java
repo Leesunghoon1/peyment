@@ -23,7 +23,9 @@ public class ServletConfig implements WebMvcConfigurer{
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 		
 		// 파일 업로드 경로 추가 (file:/// 붙여줌)
-//		registry.addResourceHandler("/upload/**").addResourceLocations("file:///C:\\Users\\UserK\\_myweb\\_java\\fileupload\\");
+		// 각자 파일 업로드 이름 다르게 설정해야됨.
+		registry.addResourceHandler("/product_upload/**").addResourceLocations("file:///C:\\tour_workspace\\_spring_final_project\\src\\main\\webapp\\resources\\image\\_product\\_java\\fileupload\\");
+		
 	}
 
 	@Override

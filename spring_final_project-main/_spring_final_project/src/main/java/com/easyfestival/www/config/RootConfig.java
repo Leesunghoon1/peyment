@@ -36,7 +36,7 @@ public class RootConfig {
 		HikariConfig hikariConfig = new HikariConfig();
 		// log4jdbc-log4j2의 드라이버 클래스 url 사용
 		hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-		hikariConfig.setJdbcUrl("jdbc:log4jdbc:mysql://localhost:3306/tourdb"); // mysql database 경로 / database이름
+		hikariConfig.setJdbcUrl("jdbc:log4jdbc:mysql://localhost:3306/tourdb?allowMultiQueries=true"); // mysql database 경로 / database이름 //?allowMultiQueries=true" 추가
 		hikariConfig.setUsername("easyuser"); // mysql user ID
 		hikariConfig.setPassword("mysql"); // PW
 		
@@ -58,6 +58,8 @@ public class RootConfig {
 		
 		// mysql 서버에서 최신 이슈가 있을경우 지원받는 설정
 		hikariConfig.addDataSourceProperty("dataSource.useServerPrepStmts", "true");
+		
+		
 		
 		HikariDataSource hikariDataSource = new HikariDataSource(hikariConfig);
 		return hikariDataSource;

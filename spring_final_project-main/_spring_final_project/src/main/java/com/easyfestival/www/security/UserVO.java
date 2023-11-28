@@ -15,11 +15,12 @@ import lombok.ToString;
 @AllArgsConstructor
 public class UserVO {
 	
-	private long userNo;
 	private String id;
 	private String pwd;
 	private String name;
 	private int age;
+	private String address;
+	private String email;
 	private String phoneNumber;
 	private String grade;
 	private long point;

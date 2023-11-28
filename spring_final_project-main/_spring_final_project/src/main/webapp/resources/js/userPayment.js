@@ -1,7 +1,21 @@
 console.log(pkVo);
+console.log(uvo);
 
 // 정규식을 사용하여 패턴에 맞게 문자열 파싱
 const matches = pkVo.match(/pkNo=(\d+), pkName=([^,]+), pkPrice=(\d+)/);
+const user = uvo.match(/id=([^,]+), pwd=([^,]+), name=([^,]+), age=(\d+), address=([^,]+), email=([^,]+), phoneNumber=([^,]+), grade=([^,]+), point=(\d+), authList=([^)]+)/);
+
+    // matches 배열에서 필요한 정보 추출
+    const id = user[1];
+    const pwd = user[2];
+    const Username = user[3];
+    const age = parseInt(user[4]);
+    const address = user[5];
+    const email = user[6];
+    const phoneNumber = user[7];
+    const grade = user[8];
+    const point = parseInt(user[9]);
+    const authList = user[10];
 
 var selectedValue;
 // matches 배열에서 필요한 정보 추출
@@ -79,16 +93,16 @@ function applyCoupon() {
     }
 
     IMP.request_pay({ // param
+
         pg: selectedValue,
         pay_method: "089",
         merchant_uid: paymentUuid(), //가맹점 주문번호 (아임포트를 사용하는 가맹점에서 중복되지 않은 임의의 문자열을 입력)
         name: pkName,
       	amount: pkPriceValue,
-		buyer_email : 'iamport@siot.do',
-		buyer_name : '구매자이름',
-		buyer_tel : '010-1234-5678',
-		buyer_addr : '서울 강남구 도곡동',
-		buyer_postcode : '123-456'
+	    	buyer_email : email,
+    		buyer_name : Username,
+	    	buyer_tel : phoneNumber,
+    		buyer_postcode : '상세주소'
     }, function (rsp) { // callback
         if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
             uid = rsp.imp_uid;
@@ -110,13 +124,13 @@ function applyCoupon() {
                         // 데이터를 json으로 보내기 위해 바꿔준다.
                         data = JSON.stringify({
                             "orderNum" : rsp.merchant_uid,
-                            "productNum" : 123, //상품번호
-                            "num" : 123, // 회원번호
+                            "productNum" : pkNo, //상품번호
+                            "id" : id, // 회원번호
                             "productName" : rsp.name,
                             "orderDate" : new Date().getTime(),
                             "totalPrice" : rsp.paid_amount,
                             "imp_uid" : rsp.imp_uid,
-                            "reserNum" :  123 // 예약정보를 담고있는번호
+                            "reserNum" :  pkNo // 예약정보를 담고있는번호
                         });
                         console.log(data);
 					
@@ -203,31 +217,9 @@ window.location.replace('/peyment/complete?payNum=' + data);
 
 
 
-// 셀렉트 옵션
-
-/* 화살표 함수 */
-/* const label = document.querySelector('.label');
-const options = document.querySelectorAll('.optionItem');
-const handleSelect = (item) => {
-  label.parentNode.classList.remove('active');
-  label.innerHTML = item.textContent;
-}
-
-options.forEach(option => {
-  option.addEventListener('click', () => handleSelect(option))
-})
-
-label.addEventListener('click', () => {
-  if(label.parentNode.classList.contains('active')) {
-    label.parentNode.classList.remove('active');
-  } else {
-    label.parentNode.classList.add('active');
-  }
-}) */
 
 
-
-
+//셀렉트
 const label = document.querySelector('.label');
 const options = document.querySelectorAll('.optionItem');
 const handleSelect = function(item) {

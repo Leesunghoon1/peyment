@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easyfestival.www.repository.ReviewDAO">
+	<insert id="reviewRegister">
+		insert into review (title,content,user_no) values
+		(#{title},#{content},#{userNo})
+	</insert>
+	<select id="list"
+		resultType="com.easyfestival.www.domain.reviewVO">
+		select * from review order by rv_no desc
+	</select>
+	<select id="detail" resultType="com.easyfestival.www.domain.reviewVO">
+		select * from review where rv_no=#{rvNo}
+	
+	</select>
+	<delete id="remove">
+		delete from review where rv_no=#{rvNo}
+	</delete>
+	<update id="modify">
+		update review set title=#{title},content=#{content} where rv_no=#{rvNo}
+	</update>
+	<update id="readCountUp">
+		update review set read_count=read_count+1 where rv_no=#{rvNo}
+	</update>
+
+</mapper>

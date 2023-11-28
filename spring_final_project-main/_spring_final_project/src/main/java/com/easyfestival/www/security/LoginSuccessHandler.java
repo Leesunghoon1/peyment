@@ -50,10 +50,12 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 		setAuthUrl("/");
 		
 //		boolean isOk = usv.updateLastLogin(getAuthId()); // getAuthEmail => getAuthUser
-		
+		UserVO uvo = usv.getId(authId);
 		// 내부에서 로그인 세션 저장됨.
 		
 		HttpSession ses = request.getSession();
+		// 로그인 사용자 세션에 저장
+		ses.setAttribute("uvo", uvo);
 		log.info("loginSuccess >>> ses >>> " + ses.toString());
 		
 		// 시큐리티에서 로그인 값이 없다면 null로 저장될 수 있음.

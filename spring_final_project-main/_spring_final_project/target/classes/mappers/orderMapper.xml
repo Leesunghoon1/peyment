@@ -8,19 +8,19 @@
 	<!-- 주문 정보 생성 -->
 	<insert id="insert_pay"
 		parameterType="com.easyfestival.www.repository.OrderDTO">
-		insert into pay_order_user(order_num, product_num, num, product_name,
+		insert into pay_order_user(order_num, product_num, id, product_name,
 		order_date, total_price, imp_uid, resur_num)
 		values(#{orderNum},#{productNum},
-		#{num},#{productName},#{orderDate},#{totalPrice},
+		#{id},#{productName},#{orderDate},#{totalPrice},
 		#{imp_uid},#{resurNum})
 	</insert>
 
 
 	<insert id="insert_payinfo"
 		parameterType="com.easyfestival.www.repository.PayDTO">
-		insert into sc_pay(num, order_num, pay_method, pay_name, pay_date,
+		insert into sc_pay(id, order_num, pay_method, pay_name, pay_date,
 		pay_amount)
-		values(#{num},#{orderNum},#{payMethod},#{payName},#{payDate},#{payAmount})
+		values(#{id},#{orderNum},#{payMethod},#{payName},#{payDate},#{payAmount})
 	</insert>
 
 	<!-- 마지막에 결제된 방금 결제된 주문정보 가져오기 -->

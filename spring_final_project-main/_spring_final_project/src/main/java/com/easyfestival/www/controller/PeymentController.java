@@ -1,17 +1,8 @@
 package com.easyfestival.www.controller;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
-import javax.net.ssl.HttpsURLConnection;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -33,10 +24,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.easyfestival.www.repository.OrderDTO;
 import com.easyfestival.www.repository.PayDTO;
-import com.easyfestival.www.service.PayService;
-import com.google.gson.JsonObject;
-import com.google.protobuf.TextFormat.ParseException;
+import com.easyfestival.www.security.UserVO;
 import com.easyfestival.www.service.OrderService;
+import com.easyfestival.www.service.PayService;
 import com.siot.IamportRestClient.IamportClient;
 import com.siot.IamportRestClient.exception.IamportResponseException;
 import com.siot.IamportRestClient.response.IamportResponse;
@@ -76,17 +66,6 @@ public class PeymentController {
 			@PathVariable(value = "imp_uid") String imp_uid) throws IamportResponseException, IOException {
 		return api.paymentByImpUid(imp_uid);
 	}
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
 	
 	
 	
@@ -140,8 +119,8 @@ public class PeymentController {
 		PayDTO payDTO = new PayDTO();
 		
 		
-		System.out.println((Long) session.getAttribute("saveNum"));
-		payDTO.setNum((Long) session.getAttribute("saveNum"));
+		System.out.println(((UserVO) session.getAttribute("uvo")).getId());
+		payDTO.setId(((UserVO) session.getAttribute("uvo")).getId());
 		payDTO.setOrderNum(Long.parseLong(result.getResponse().getMerchantUid()));
 		payDTO.setPayMethod(result.getResponse().getPayMethod());
 		payDTO.setPayName(result.getResponse().getName());

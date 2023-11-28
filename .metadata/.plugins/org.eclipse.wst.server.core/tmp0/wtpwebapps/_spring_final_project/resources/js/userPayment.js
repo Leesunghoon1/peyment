@@ -9,6 +9,50 @@ const pkNo = matches[1];
 const pkName = matches[2];
 const pkPrice = matches[3];
 
+let pkPriceValue;
+
+function applyCoupon() {
+  const couponInput = document.getElementById('coupon-input');
+  const pkPriceElement = pkPrice; // pkPriceElement 정의
+	const discountedPriceElement = document.getElementById('discounted-price-value'); 
+  const discountedPriceElement2 = document.getElementById('discounted-price-value2'); 
+  
+    // pkPriceElement이 null이면 함수 종료
+    if (!pkPriceElement) {
+        console.error('쿠폰 입력해주세요');
+        return;
+    }
+
+  const couponCode = couponInput.value.trim().toLowerCase();
+
+
+    let discount = 0;
+
+    switch (couponCode) {
+        case 'coupon10':
+            discount = 10;
+            break;
+        case 'coupon20':
+            discount = 20;
+            break;
+        // 여기에 필요한 쿠폰을 추가하세요.
+        default:
+            alert('Invalid Coupon Code');
+            return; // 함수 종료
+    }
+	
+    const discountedPrice = pkPrice - (pkPrice * (discount / 100));
+	  pkPriceValue = discountedPrice;
+    // discountedPrice를 pkPriceElement의 innerText로 설정
+    
+    pkPriceElement.innerText = discountedPrice.toFixed(2);
+    discountedPriceElement.innerText = discountedPrice;
+
+
+    discountedPriceElement2.innerText = discountedPrice;
+    
+}
+
 
 
 
@@ -30,12 +74,16 @@ const pkPrice = matches[3];
     var uid = '';
     IMP.init("imp76450478");
 
+    if(pkPriceValue == null) {
+      pkPriceValue = pkPrice;
+    }
+
     IMP.request_pay({ // param
         pg: selectedValue,
         pay_method: "089",
         merchant_uid: paymentUuid(), //가맹점 주문번호 (아임포트를 사용하는 가맹점에서 중복되지 않은 임의의 문자열을 입력)
         name: pkName,
-      	amount: pkPrice,
+      	amount: pkPriceValue,
 		buyer_email : 'iamport@siot.do',
 		buyer_name : '구매자이름',
 		buyer_tel : '010-1234-5678',

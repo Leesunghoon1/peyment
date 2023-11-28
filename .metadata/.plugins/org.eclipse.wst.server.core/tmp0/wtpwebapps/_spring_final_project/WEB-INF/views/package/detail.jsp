@@ -29,9 +29,7 @@
 	<div class="payment-container-main">
 		<div class="bg-video">
 			<video class="bg-video__content" autoplay muted loop>
-				<source
-					src="/resources/image/pierrr.mp4"
-					type="video/mp4">
+				<source src="/resources/image/pierrr.mp4" type="video/mp4">
 				<source src="img/video.webm" type="video/webm" />
 			</video>
 		</div>
@@ -68,16 +66,20 @@
 						<h3 class="user-nmuber-top">할인 수단 선택</h3>
 					</div>
 					<div class="product-amout">
-						<span>구매 총액</span> <b>${pkvo.pkPrice}</b>
+						<span>구매 금액</span> <b>${pkvo.pkPrice}</b>
 					</div>
 
 					<div class="form-group-cupon-mid">
-						<button type="button" class="cupon-button">사용 가능 쿠폰</button>
+						<input type="text" id="coupon-input"
+							placeholder="Enter Coupon Code">
+							<br>
+						<button type="button" class="cupon-button" onclick="applyCoupon()">사용
+							가능 쿠폰</button>
 
 
 					</div>
 					<div class="product-amout">
-						<span> 일반쿠폰 </span> <span> - </span>
+						<span> 일반쿠폰 </span> <span id="discounted-coupon-value"> %</span>
 					</div>
 
 					<div class="product-amout">
@@ -90,13 +92,12 @@
 						<span> 최종할인</span> <span> - </span>
 					</div>
 					<div class="product-amout">
-						<span> 최종금액</span> <span> <b>${pkvo.pkPrice}</b> -
-						</span>
+						<span> 최종금액</span> <span id="discounted-price-value">${pkvo.pkPrice}</span>
 					</div>
 
 					<div class="box-left">
 						<div class="box">
-							<div class="selectBox2">
+							<div class="selectBox">
 								<button class="label">결제수단 선택</button>
 								<ul class="optionList" id="paymentMethod">
 									<li class="optionItem" value="kakaopay" data-v-16d1a795>카카오페이</li>
@@ -110,7 +111,7 @@
 							</div>
 
 						</div>
-						<button class="custom-btn btn-6" type="button"
+						<button class="btn-gradient cyan" type="button"
 							onclick="requestPay()">
 							<span>결제하기</span>
 						</button>
@@ -156,8 +157,7 @@
 
 
 
-							<td><span class="apprice"> <fmt:formatNumber
-										value="${pkvo.pkPrice}" pattern="#,###" />
+							<td><span class="apprice"> <span id="discounted-price-value2">${pkvo.pkPrice}</span>
 							</span> 원 ${avo.apDeparture }<br></td>
 
 

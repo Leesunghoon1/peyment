@@ -228,6 +228,7 @@ form-group-rogin span {
 	background: #fafafa;
 	font-size: 16px;
 	color: rgba(0, 0, 0, .56);
+	cursor: pointer;
 }
 
 .form-group-cupon-mid {
@@ -277,12 +278,11 @@ form-group-rogin span {
 	width: 100%;
 }
 
-/* ------------------------------------------------------- */
-.selectBox2 * {
+.selectBox * {
 	box-sizing: border-box;
 }
 
-.selectBox2 {
+.selectBox {
 	position: relative;
 	width: 150px;
 	height: 35px;
@@ -293,7 +293,7 @@ form-group-rogin span {
 	cursor: pointer;
 }
 
-.selectBox2:after {
+.selectBox:after {
 	content: '';
 	display: block;
 	width: 2px;
@@ -304,7 +304,7 @@ form-group-rogin span {
 	background: lightcoral;
 }
 
-.selectBox2 .label {
+.selectBox .label {
 	display: flex;
 	align-items: center;
 	width: inherit;
@@ -316,7 +316,7 @@ form-group-rogin span {
 	cursor: pointer;
 }
 
-.selectBox2 .optionList {
+.selectBox .optionList {
 	position: absolute;
 	top: 28px;
 	left: 0;
@@ -331,38 +331,38 @@ form-group-rogin span {
 	transition: .3s ease-in;
 }
 
-.selectBox2 .optionList::-webkit-scrollbar {
+.selectBox .optionList::-webkit-scrollbar {
 	width: 6px;
 }
 
-.selectBox2 .optionList::-webkit-scrollbar-track {
+.selectBox .optionList::-webkit-scrollbar-track {
 	background: transparent;
 }
 
-.selectBox2 .optionList::-webkit-scrollbar-thumb {
+.selectBox .optionList::-webkit-scrollbar-thumb {
 	background: #303030;
 	border-radius: 45px;
 }
 
-.selectBox2 .optionList::-webkit-scrollbar-thumb:hover {
+.selectBox .optionList::-webkit-scrollbar-thumb:hover {
 	background: #303030;
 }
 
-.selectBox2.active .optionList {
+.selectBox.active .optionList {
 	max-height: 500px;
 }
 
-.selectBox2 .optionItem {
+.selectBox .optionItem {
 	border-bottom: 1px dashed rgb(170, 72, 72);
 	padding: 5px 15px 5px;
 	transition: .1s;
 }
 
-.selectBox2 .optionItem:hover {
+.selectBox .optionItem:hover {
 	background: rgb(175, 93, 93);
 }
 
-.selectBox2 .optionItem:last-child {
+.selectBox .optionItem:last-child {
 	border-bottom: 0 none;
 }
 
@@ -381,9 +381,27 @@ form-group-rogin span {
 }
 
 .bg-video__content {
-	z-index: -1;
+	z-index: -2;
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
 	background-size: cover 와 비슷함.(HTML 요소 or 비디오와 작동)
+}
+
+.btn-gradient {
+	margin: 5px;
+}
+
+.btn-gradient {
+	position: relative;
+	width: 150px;
+	background: calc(100% - 7px) center no-repeat;
+	padding: 8px 18px;
+	font-size: 14px;
+	border-radius: 10px;
+	
+}
+
+.btn-gradient .optionList::-webkit-scrollbar-track {
+	background: #303030;
 }

@@ -81,38 +81,7 @@ public class PeymentController {
 	
 	
 	
-	// /admin/주소 적용시 exception 에러
-	@PostMapping("orderCancle")
-	@ResponseBody
-	public int orderCancle(OrderDTO orderList, PayDTO payDTO) throws Exception {
-//		userId == 0 비회원
-		System.out.println("여긴 order/orderCancel");
-		System.out.println("1 : "+orderList);
-		System.out.println("1 : "+orderList.getImp_uid());
-		System.out.println("1 : "+orderList.getOrderNum());
-		
-		orderList = orderService.adminList(orderList); 
-		
-		System.out.println("2 : "+orderList);
-		System.out.println("2 : "+orderList.getImp_uid());
-		System.out.println("2 : "+orderList.getOrderNum());
-		
-		int result1 = orderService.payMentCancle(payDTO);
-		System.out.println("rrr");
-		
-		int result = orderService.orderCancle(orderList);
 
-		if(result>0) {
-			System.out.println("DB 삭제성공");
-		}
-		if(result1>0) {
-			System.out.println("Pay DB 삭제성공");
-		}
-		
-		return result;
-	}
-	
-	
 	
 	
 	

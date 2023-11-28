@@ -32,33 +32,38 @@ body, h1, h2, h3, h4, h5, h6, p, span {
 						<h3>${payDTO.payAmount }전체금액</h3>
 						<h3>${payDTO.payMethod }결제방식</h3>
 						<h3>${payDTO.payNum }결제번호</h3>
-						<button type="button" order-num="${payDTO.orderNum}"
-							class="payMentCancel site-btn">주문취소</button>
+
 						<div class="point_list_box">
 
-							<table class="point_table">
-								<colgroup>
-									<col style="width: 15%">
-									<col style="width: 55%;">
-									<col style="width: 15%">
-									<col style="width: 15%">
-								</colgroup>
-								<tr class="table_top_tr">
-									<th>주문일/주문번호</th>
-									<th>상품정보</th>
-									<th>상태</th>
-									<th>신청</th>
-								</tr>
-								<tbody>
-
-									<c:forEach var="val" items="${map.value}" varStatus="itt">
-										<td class="order_info_td">
-										<td><br></td>
-
-									</c:forEach>
-
-								</tbody>
-							</table>
+							<div class="container">
+								<h1>이성훈님의 결제 정보</h1>
+								<table class="rwd-table">
+									<tbody>
+										<tr>
+											<th>결제 시간/결제 번호</th>
+											<th>상품 번호</th>
+											<th>상품 이름</th>
+											<th>상품 출발시간</th>
+											<th>상품 도착시간</th>
+											<th>상품 최종가격</th>
+											<th>주문 취소</th>
+										</tr>
+										<tr>
+											<td data-th="Supplier Code">${payDTO.payNum }</td>
+											<td data-th="Supplier Name">${payDTO.orderNum }</td>
+											<td data-th="Invoice Number">${payDTO.payName }</td>
+											<td data-th="Invoice Date">출발일</td>
+											<td data-th="Due Date">도착일</td>
+											<td data-th="Net Amount">${payDTO.payAmount }</td>
+											<td data-th="Net Amount">
+												<button type="button" order-num="${payDTO.orderNum}"
+													class="payMentCancel site-btn">주문 취소</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>이전 다음</h3>
+							</div>
 						</div>
 					</div>
 				</div>

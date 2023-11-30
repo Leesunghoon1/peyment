@@ -28,9 +28,10 @@ body, h1, h2, h3, h4, h5, h6, p, span {
 				<div class="row">
 					<div class="col-lg-12">
 
-						<h3>${payDTO.orderNum }님의전체주문내역</h3>
+						<h3>${payDTO.id }님의전체주문내역</h3>
 						<h3>${payDTO.payAmount }전체금액</h3>
 						<h3>${payDTO.payMethod }결제방식</h3>
+						<h3>${payDTO.payNum }결제번호</h3>
 						<h3>${payDTO.payNum }결제번호</h3>
 
 						<div class="point_list_box">
@@ -40,7 +41,7 @@ body, h1, h2, h3, h4, h5, h6, p, span {
 								<table class="rwd-table">
 									<tbody>
 										<tr>
-											<th>결제 시간/결제 번호</th>
+											<th>결제 날짜/결제 번호</th>
 											<th>상품 번호</th>
 											<th>상품 이름</th>
 											<th>상품 출발시간</th>
@@ -49,7 +50,7 @@ body, h1, h2, h3, h4, h5, h6, p, span {
 											<th>주문 취소</th>
 										</tr>
 										<tr>
-											<td data-th="Supplier Code">${payDTO.payNum }</td>
+											<td data-th="Supplier Code">${payDTO.payDate}<>${payDTO.payNum }</td>
 											<td data-th="Supplier Name">${payDTO.orderNum }</td>
 											<td data-th="Invoice Number">${payDTO.payName }</td>
 											<td data-th="Invoice Date">출발일</td>
@@ -68,7 +69,7 @@ body, h1, h2, h3, h4, h5, h6, p, span {
 					</div>
 				</div>
 				<!-- 리뷰 페이지 끝 -->
-
+				<input type="hidden" class="payMentCancel" value="${payDTO.id}">
 			</form>
 		</div>
 	</section>

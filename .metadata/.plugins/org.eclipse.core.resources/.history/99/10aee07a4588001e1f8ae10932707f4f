@@ -1,0 +1,14 @@
+package com.easyfestival.www.repository;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+
+public class OrderDAO {
+	
+	@Autowired
+	@SuppressWarnings("unused")
+	private SqlSession sqlSession;
+
+}

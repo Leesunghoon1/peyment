@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,9 +23,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.easyfestival.www.repository.OrderDTO;
 import com.easyfestival.www.repository.PayDTO;
-import com.easyfestival.www.security.UserVO;
-import com.easyfestival.www.service.OrderService;
 import com.easyfestival.www.service.PayService;
+import com.easyfestival.www.service.OrderService;
 import com.siot.IamportRestClient.IamportClient;
 import com.siot.IamportRestClient.exception.IamportResponseException;
 import com.siot.IamportRestClient.response.IamportResponse;
@@ -66,10 +64,6 @@ public class PeymentController {
 			@PathVariable(value = "imp_uid") String imp_uid) throws IamportResponseException, IOException {
 		return api.paymentByImpUid(imp_uid);
 	}
-	
-	
-	
-	
 
 	@RequestMapping(value = "/complete", method = RequestMethod.POST)
 	@ResponseBody
@@ -118,9 +112,10 @@ public class PeymentController {
 		IamportResponse<Payment> result = api.paymentByImpUid(imp_uid);
 		PayDTO payDTO = new PayDTO();
 		
+		System.out.println("포인트야 ?"+ result.getResponse().getPayMethod());
 		
-		System.out.println(((UserVO) session.getAttribute("uvo")).getId());
-		payDTO.setId(((UserVO) session.getAttribute("uvo")).getId());
+		System.out.println((Long) session.getAttribute("saveNum"));
+		payDTO.setNum((Long) session.getAttribute("saveNum"));
 		payDTO.setOrderNum(Long.parseLong(result.getResponse().getMerchantUid()));
 		payDTO.setPayMethod(result.getResponse().getPayMethod());
 		payDTO.setPayName(result.getResponse().getName());
@@ -134,51 +129,6 @@ public class PeymentController {
 		return new ResponseEntity<Long>(payDTO.getPayNum(), HttpStatus.OK);
 	}
 	
-	
-	
-	@PostMapping("payMentCancel")
-	@ResponseBody
-	public int payMentCancle(OrderDTO orderDTO) throws Exception{
-		int result = 0;
-		System.out.println("payMentCancel" + orderDTO);
-		System.out.println("1 : " + orderDTO.getOrderNum());
-		if(orderDTO.getOrderNum() != null) {
-			result = 1;
-		}
-		return result;
-	}
-	
+
+
 }
-	
-	
-/*
- * @GetMapping(value = "myOrderList") public String myOrder(OrderDTO
- * orderDTO,HttpSession session, Model model,
- * 
- * @RequestParam(value = "pagingNum", required = false, defaultValue = "1")
- * String pagingNum) throws Exception{
- * 
- * System.out.println("myorderList"); Long svNum =
- * (Long)(session.getAttribute("saveNum"));
- * 
- * String saveNUM = String.valueOf(svNum); List<Long> codeList =
- * orderService.MyOrderCount(saveNUM);
- * 
- * System.out.println("saveNum : " + saveNUM); System.out.println("codeList : "
- * +codeList);
- * 
- * 
- * List<Long> limitList = new ArrayList<Long>(); try { limitList =
- * codeList.subList(cri.getPageStart(), cri.getPageStart()+3); } catch
- * (Exception e) { limitList = codeList.subList(cri.getPageStart(),
- * codeList.size()); } Map<Long, List> orderMap =
- * orderService.getMyOrderList(saveNUM, limitList);
- * 
- * UserPageMaker pm = new UserPageMaker(); pm.setCri(cri);
- * pm.setTotalCount(codeList.size());
- * 
- * model.addAttribute("orderMap", orderMap); model.addAttribute("pagingNum",
- * pagingNum); model.addAttribute("pm", pm); return "order/myOrderList"; }
- * 
- * }
- */

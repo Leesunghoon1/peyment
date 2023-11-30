@@ -1,0 +1,5 @@
+package com.easyfestival.www.config;
+
+public class WebConfig {
+
+}

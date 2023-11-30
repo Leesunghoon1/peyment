@@ -109,6 +109,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\tour_workspace\spring_final_project-main\spring_final_project-main\_spring_final_project"/>
 			<item value="C:\lee\pjt\spring_final_project-main\spring_final_project-main\_spring_final_project"/>
 			<item value="C:\Users\fecd1\Downloads\spring_final_project-main\spring_final_project-main\_spring_final_project"/>
 			<item value="C:\Users\fecd1\Downloads\spring_final_project-main\spring_final_project-main"/>

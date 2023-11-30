@@ -14,6 +14,10 @@ public interface PackageDAO {
 
 	PackageVO getPackageDetail(long pkNo);
 
+	int register(PackageVO pgvo);
+
+	List<PackageVO> getlist();
+
 
 
 

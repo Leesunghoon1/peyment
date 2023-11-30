@@ -1,0 +1,5 @@
+package com.easyfestival.www.controller;
+
+public class UserController {
+
+}

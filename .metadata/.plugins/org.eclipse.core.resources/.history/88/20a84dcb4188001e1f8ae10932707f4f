@@ -1,0 +1,8 @@
+package com.easyfestival.www.repository;
+
+public class OrderDAO {
+	
+	@Autowired
+	private SqlSession sqlSession;
+
+}

@@ -1,0 +1,12 @@
+package com.easyfestival.www.security;
+
+public class UserVO {
+	private long userNo;
+	private String id;
+	private String pwd;
+	private String name;
+	private long point;
+	private String phoneNumber;
+	private int age;
+	private String grade;
+}

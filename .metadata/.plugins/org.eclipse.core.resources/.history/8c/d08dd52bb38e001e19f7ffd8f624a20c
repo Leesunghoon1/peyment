@@ -1,0 +1,5 @@
+package com.easyfestival.www.handler;
+
+public class UserCriteria {
+
+}

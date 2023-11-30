@@ -18,7 +18,7 @@ public class OrderDTO {
 
 	private Long orderNum;
 	private Long productNum;
-	private String id;
+	private Long num;
 	private String productName;
 	private Date orderDate;
 	private Long totalPrice;

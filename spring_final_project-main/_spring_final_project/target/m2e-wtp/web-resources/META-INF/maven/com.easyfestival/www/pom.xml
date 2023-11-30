@@ -21,13 +21,14 @@
 		</repository>
 	</repositories>
 	<dependencies>
+
 		<dependency>
 			<groupId>com.github.iamport</groupId>
 			<artifactId>iamport-rest-client-java</artifactId>
 			<version>0.2.23</version>
 		</dependency>
-
-		<dependency>
+		
+			<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.11.2</version>

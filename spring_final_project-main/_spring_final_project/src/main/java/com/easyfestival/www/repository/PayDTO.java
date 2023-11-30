@@ -20,7 +20,7 @@ public class PayDTO {
 	// num -- 회원번호
 	// orderNum - 주문번호
 	private Long payNum;
-	private String id;
+	private Long num;
 	// orderNum -> FK SC_ORDER_USER orderNum 받기
 	private Long orderNum;
 	private String payMethod;

@@ -80,6 +80,9 @@ body, h1, h2, h3, h4, h5, h6, p, span {
 	<script type="text/javascript">
 		let pkVo = `<c:out value="${payDTO}" />`;
 	</script>
+		<script type="text/javascript">
+		let order = `<c:out value="${orderDTO}" />`;
+	</script>
 
 	<script src="/resources/js/myOrder.js">
 		

@@ -19,66 +19,86 @@ console.log("payDate:", payDate);
 console.log("payAmount:", payAmount);
 
 document.addEventListener("DOMContentLoaded", function () {
-  const payMentCancelButtons = document.querySelectorAll('.payMentCancel');
+    const payMentCancelButtons = document.querySelectorAll('.payMentCancel');
 
-  payMentCancelButtons.forEach(function(button) {
-      button.addEventListener("click", function () {
+    payMentCancelButtons.forEach(function(button) {
+        button.addEventListener("click", function () {
 
-          const userConfirmed = confirm("주문을 취소하시겠습니까?\n취소하면 되돌릴 수 없습니다.!");
+            console.log("1111" + payNum)
+            console.log("1111" + orderNum)
+            $.ajax({
+              type: 'POST',
+              url: '/peyment/completeDetail',
+              data: {
+                  value: payNum.value,
+              },
+              success: function(data) {
+                      console.log("112" + data)
+                      if(data == 1){
+                        location.replace('/peyment/completeDetail?payNum='+payNum.value);
+                      } 
+                    }
+          });
 
-          if (userConfirmed) {
-              alert("주문을 취소하였습니다!");
-              const xhttp = new XMLHttpRequest();
-              console.log(xhttp)
+            const userConfirmed = confirm("주문을 취소하시겠습니까?\n취소하면 되돌릴 수 없습니다.!");
 
-              xhttp.open("POST", "/peyment/orderCancle");
+            if (userConfirmed) {
+                alert("주문을 취소하였습니다!");
+                const xhttp = new XMLHttpRequest();
+                console.log(xhttp);
 
-              xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                
+                xhttp.open("POST", "/peyment/orderCancle");
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("orderNum=" + orderNum);
 
-             xhttp.send("orderNum=" + orderNum);
-              xhttp.onreadystatechange = function () {
-                  if (this.readyState == 4 && this.status == 200) {
-                      let result1 = xhttp.responseText.trim();
-                      console.log(result1 + "11111");
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let result1 = xhttp.responseText.trim();
+                        console.log(result1 + "11111");
 
-                      if (result1 == 1) {
-                          location.replace('/package/list');
-                      } else {
-                          alert("이미 취소된 주문이거나 없는 주문번호입니다.");
-                      }
-                  }
-              }
-          } else {
-              alert("보류하였습니다!");
-          }
-      });
-  });
+                        if (result1 == 1) {
+                            location.replace('/package/list');
+                        } else {
+                            alert("이미 취소된 주문이거나 없는 주문번호입니다.");
+                        }
+                    }
+                }
+            } else {
+                alert("보류하였습니다!");
+            }
+        });
+    });
 });
-
 
 function cancelPay(){
 		
 		
-        const xhttp = new XMLHttpRequest;
+    const xhttp = new XMLHttpRequest;
 
-        xhttp.open("POST","../admin/orderCancle")
+    xhttp.open("POST","../admin/orderCancle")
 
-        
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 
-        xhttp.send("orderNum="+orderNum);
+    xhttp.send("orderNum="+orderNum);
 
-        xhttp.onreadystatechange=function(){
-            if(this.readyState==4 && this.status==200){
-               let result1 = xhttp.responseText.trim();
-               console.log(result1);
-                   if(result1==1){
-                       console.log("삭제성공")
-               
-                   } else{
-                       console.log("삭제실패");
-                   }
-            } 
-        }
- }
+    xhttp.onreadystatechange=function(){
+        if(this.readyState==4 && this.status==200){
+           let result1 = xhttp.responseText.trim();
+           console.log(result1);
+               if(result1==1){
+                   console.log("삭제성공")
+           
+               } else{
+                   console.log("삭제실패");
+               }
+        } 
+    }
+}
+
+
+
+
+

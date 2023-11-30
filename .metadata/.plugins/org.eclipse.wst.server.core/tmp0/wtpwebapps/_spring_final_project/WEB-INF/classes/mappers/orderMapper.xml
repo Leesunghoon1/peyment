@@ -73,5 +73,13 @@
 		resultType="Long">
 		SELECT order_num FROM sc_pay WHERE id = {id}
 	</select>
+	
+<select id="getOrderListDetail" resultType="com.easyfestival.www.repository.OrderDTO">
+    SELECT *
+    FROM pay_order_user o
+    JOIN sc_pay s ON (o.order_num = s.order_num)
+    WHERE o.order_num = #{orderNum}
+</select>
+
 
 </mapper>

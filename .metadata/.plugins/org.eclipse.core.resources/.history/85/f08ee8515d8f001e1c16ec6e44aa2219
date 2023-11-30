@@ -1,0 +1,95 @@
+package com.easyfestival.www.service;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.easyfestival.www.repository.OrderDAO;
+import com.easyfestival.www.repository.OrderDTO;
+import com.easyfestival.www.repository.PayDTO;
+import com.easyfestival.www.security.UserVO;
+
+@Service
+public class OrderService {
+
+	@Autowired
+	private OrderDAO orderDAO;
+
+	@Autowired
+	private PayService payService;
+
+	public int insert_pay(OrderDTO orderDTO) throws Exception {
+
+		return orderDAO.insert_pay(orderDTO);
+	}
+
+	public int insert_payinfo(PayDTO payDTO) throws Exception {
+
+		return orderDAO.insert_payinfo(payDTO);
+	}
+
+	public PayDTO getLastPay(PayDTO payDTO) throws Exception {
+
+		return orderDAO.getLastPay(payDTO);
+	}
+
+	public PayDTO getPay(long payNum) {
+		// TODO Auto-generated method stub
+		return orderDAO.getPay(payNum);
+	}
+
+	public List<Long> MyOrderCount(String id) throws Exception {
+		
+		return orderDAO.myOrderCount(id);
+	}
+
+	public OrderDTO adminList(OrderDTO orderDTO) throws Exception {
+		return orderDAO.adminList(orderDTO);
+	}
+
+	public int payMentCancle(PayDTO payDTO) {
+		// TODO Auto-generated method stub
+		return orderDAO.payMentCancle(payDTO.getOrderNum());
+	}
+
+	public int orderCancle(OrderDTO orderList) throws Exception {
+		System.out.println("1 : " + orderList);
+		System.out.println("2 : " + orderList.getOrderNum());
+		System.out.println("3 : " + orderList.getImp_uid());
+		if (!orderList.getImp_uid().equals("")) {
+
+			String token = payService.getToken();
+
+			Long price = orderList.getTotalPrice();
+
+			Long refundPrice = price;
+
+			System.out.println("Test ss");
+
+			payService.payMentCancle(token, orderList.getImp_uid(), refundPrice + "", "환불");
+
+			System.out.println("Test ss2222");
+
+		}
+
+		return orderDAO.orderCancle((orderList.getOrderNum()));
+	}
+	
+	
+
+	public Map<Long, List> getMyOrderList(String id, List<Long> limitList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	
+
+
+}

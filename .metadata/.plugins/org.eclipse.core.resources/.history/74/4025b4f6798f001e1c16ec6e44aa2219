@@ -1,0 +1,37 @@
+package com.easyfestival.www.repository;
+
+import java.sql.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+
+@Getter
+@Setter
+@ToString
+public class OrderDTO {
+
+	private Long orderNum;
+	private Long productNum;
+	private String id;
+	private String productName;
+	private Date orderDate;
+	private Long totalPrice;
+	private String imp_uid;
+	private Long resurNum;
+	
+	public String getImp_uid() {
+		return imp_uid;
+	}
+	public void setImp_uid(String imp_uid) {
+		this.imp_uid = imp_uid;
+	}
+	
+	
+	
+	
+	
+}
